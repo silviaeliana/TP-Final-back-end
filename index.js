@@ -39,7 +39,7 @@ app.get('/productos', async  (req, res) => {
         res.json(rows);
 
     } catch (error) {
-        res.send(500).send('Internal server error')
+        res.status(500).send('Internal server error')
     }
 
 
