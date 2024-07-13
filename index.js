@@ -20,10 +20,12 @@ app.use(express.static('/public'));
 
 
 
-
 // Read all resources
 app.get('/productos', async  (req, res) => {
-    const sql = `SELECT * FROM productos`;
+    const sql = `SELECT productos.id_producto, productos.nombre, productos.descripcion, productos.stock, productos.precio, categorias.nombre AS categoria_nombre
+    FROM productos
+    JOIN categorias ON productos.id_categoria = categorias.id_categoria
+    ORDER By productos.precio DESC `;
 
     try {
         const connection = await pool.getConnection()
@@ -139,5 +141,5 @@ app.delete('/productos/:id', async(req, res) => {
 // Iniciar el servidor
 
 app.listen(puerto, () => {
-    console.log(`Servidor escuchando el puerto ${puerto}`);
+    console.log('Server started on port 3000');
 });

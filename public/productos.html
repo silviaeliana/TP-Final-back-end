@@ -38,20 +38,17 @@
 
                productos.forEach(productos => {
                    const productosElement = document.createElement('div');
-                   productosElement.innerHTML = `
-                       <h2>${productos.nombre}</h2>
-                       <p>${productos.descripcion}</p>
+                   productoElement.innerHTML = `
+                       <h2>${producto.nombre}</h2>
+                       <p>${producto.descripcion}</p>
                        <ul>
-                           <li>Id: ${productos.id_producto}</li>
-                          <li>Stock: ${productos.stock}</li>
-                           <li>Categoría: ${productos.categoria}</li>
-                           
-                           
+                           <li>Id: ${producto.id_producto}</li>
+                          <li>Stock: ${producto.stock}</li>
+                           <li>Categoría: ${producto.categoria}</li>                                                     
                        </ul>
-                       <strong>$ ${productos.precio}</strong>
-                       
+                       <strong>$ ${producto.precio}</strong>                      
                    `;
-                   productosContainer.appendChild(productosElement);
+                   productosContainer.appendChild(productoElement);
                });
            });
    </script>
