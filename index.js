@@ -10,13 +10,16 @@ import 'dotenv/config';
 // Create an Express app
 const app = express();
 
-
 const puerto = process.env.PORT || 3000;
 
 // Enable JSON parsing for request bodies
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('/public'));
+
+
+
+
 
 // Read all resources
 app.get('/productos', async  (req, res) => {
@@ -41,7 +44,7 @@ app.get('/productos/:id', async (req, res) => {
     const id = req.params.id
     console.log("Intentando obtener producto con id :"+id);
     const sql = `  
-    SELECT productos.id_producto, productos.descripcion, productos.stock, productos.precio, categorias.nombre AS categoria_nombre
+    SELECT productos.id_producto, productos.nombre, productos.descripcion, productos.stock, productos.precio, categorias.nombre AS categoria_nombre
     FROM productos
     JOIN categorias ON productos.id_categoria = categorias.id_categoria
     WHERE productos.id_producto = ?
