@@ -7,7 +7,7 @@
     <style>
         #productos {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
     
@@ -23,13 +23,9 @@
    <h1>Productos</h1> 
    
 
-   <section id="productos">
+   <section id= "productos" >
 
    </section>
-
-
-
-
 
 
    <script>
@@ -40,22 +36,22 @@
                console.log(productos)
                const productosContainer = document.querySelector('#productos');
 
-               productos.forEach(producto => {
-                   const productoElement = document.createElement('div');
-                   productoElement.innerHTML = `
-                       <h2>${producto.nombre}</h2>
-                       <p>${producto.descripcion}</p>
+               productos.forEach(productos => {
+                   const productosElement = document.createElement('div');
+                   productosElement.innerHTML = `
+                       <h2>${productos.nombre}</h2>
+                       <p>${productos.descripcion}</p>
                        <ul>
-                           <li>Id: ${producto.id_producto}</li>
-                          <li>Stock: ${producto.stock}</li>
-                           <li>Categoría: ${producto.categoria}</li>
+                           <li>Id: ${productos.id_producto}</li>
+                          <li>Stock: ${productos.stock}</li>
+                           <li>Categoría: ${productos.categoria}</li>
                            
                            
                        </ul>
-                       <strong>$ ${producto.precio}</strong>
+                       <strong>$ ${productos.precio}</strong>
                        
                    `;
-                   productosContainer.appendChild(productoElement);
+                   productosContainer.appendChild(productosElement);
                });
            });
    </script>
