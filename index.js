@@ -17,9 +17,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('/public'));
 
-app.get('/', (req, res) =>{
-    res.sendFile(__dirname + '/productos.html')
-    });
+app.get('/', (req, res) => {
+    res.sendFile('productos.html', { root: 'public' });
+  });
 
 
 
