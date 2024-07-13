@@ -23,7 +23,7 @@
    <h1>Productos</h1> 
    
 
-   <section id= "productos" >
+   <section id="productos">
 
    </section>
 
@@ -31,14 +31,14 @@
    <script>
        fetch('/productos')
            .then(response => response.json())
-           .then(data => {
-               const productos = data;
+           .then(data=>{
+               const productos=data;
                console.log(productos)
-               const productosContainer = document.querySelector('#productos');
+               const productosContainer=document.querySelector('#productos');
 
-               productos.forEach(productos => {
-                   const productosElement = document.createElement('div');
-                   productoElement.innerHTML = `
+               productos.forEach(producto => {
+                   const productoElement=document.createElement('div');
+                   productoElement.innerHTML=`
                        <h2>${producto.nombre}</h2>
                        <p>${producto.descripcion}</p>
                        <ul>

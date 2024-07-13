@@ -125,7 +125,7 @@ app.delete('/productos/:id', async(req, res) => {
         console.log(rows)
         res.send(`
             <h1>Producto borrado id: ${id}</h1>
-            `);;
+            `);
 
     } catch (error) {
         res.status(500).json({message:'Internal server error'});
